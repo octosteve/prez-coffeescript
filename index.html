@@ -16,25 +16,27 @@
 
     <div id="impress">
 
-      <div class="step">
-        <h1>CoffeeScript</h1>
+      <div class="step" data-y="800" data-rotate-x="-90" data-scale="2">
+        <p class="info">Take a sip of</p>
+        <h1><img src="img/coffeescript-logo.svg" alt="CoffeeScript"/></h1>
         <p class="subtitle">Le JS++ <em>avec de vrais morceaux de chocolat dedans</em></p>
-        <p class="author">by <a href="https://twitter.com/madsgraphics">@madsgraphics</a></p>
+        <p class="author">servi par <a href="https://twitter.com/madsgraphics">@madsgraphics</a></p>
       </div>
 
-      <div class="step">
+      <div class="step" data-x="750" data-y="800" data-z="-1600" data-rotate-x="-90" data-rotate="90">
         <span>Heeeeeey!</span><br>
-        <span>Je suis <a href="https://twitter.com/madsgraphics">@madsgraphics</a>, et je fais du web ツ゚</span>
+        <span>Je suis <a href="https://twitter.com/madsgraphics">@madsgraphics</a>, et je fais du web ツ…</span><br>
+        <span class="more">… mais pas seulement</span>
       </div>
 
       <div class="step">
-        <span>Vous aimez le web ?</span><br>
-        <span>Les interfaces riches ?</span><br>
-        <span>Les expériences utilisateur de qualité ?</span>
+        <span>J'aime le web…</span><br>
+        <span>Les interfaces riches…</span><br>
+        <span>Les expériences utilisateur de qualité…</span>
       </div>
 
       <div class="step">
-        <span>Moi aussi…</span>
+        <span>Vous aussi ?</span>
       </div>
 
       <div class="step">
@@ -112,7 +114,172 @@
       </div>
 
       <div class="step">
-        Concepteurs de langages…
+        <span>WTF?</span>
+      </div>
+
+      <div class="step">
+        <span>Scope global</span>
+        <pre class="javascript">
+<code>function increase(n) {
+  result = n + 1;
+  return result;
+}
+
+function decrease() {
+  result -= 1;
+  return result;
+}
+</code></pre>
+      </div>
+
+      <div class="step">
+        <span><code>width</code> block</span>
+        <pre class="javascript">
+<code>var foo = 5;
+with (obj)
+  print foo; // 5 sauf si obj.foo existe
+</code>
+        </pre>
+      </div>
+
+      <div class="step">
+        <span>Negative Zero !</span>
+        <pre class="javascript">
+<code>0 === -0; // true
+1/0 === 1/-0; // false
+</code>
+        </pre>
+      </div>
+
+      <div class="step">
+        <span>NaN</span>
+        <pre class="javascript">
+<code> typeof NaN; // "number"
+</code></pre>
+      </div>
+
+      <div class="step">
+        <span>So, What, Wait?</span>
+      </div>
+
+      <div class="step">
+        <span>John McCarthy</span>
+        <img src="img/john-mc-carthy.jpg"/>
+        <span>Lisp,<br>1958</span>
+      </div>
+
+      <div class="step">
+        <span>Dennis Ritchie</span>
+        <img src="img/dennis-ritchie.jpg"/>
+        <span>C,<br>1973</span>
+      </div>
+
+      <div class="step">
+        <span>Bjarne Stroustrup</span>
+        <img src="img/bjarne-stroustrup.jpg"/>
+        <span>C++,<br>1983</span>
+      </div>
+
+      <div class="step">
+        <span>Guido Van Rossum</span>
+        <img src="img/guido-van-rossum.jpg"/>
+        <span>Python,<br>1991</span>
+      </div>
+
+      <div class="step">
+        <span>James Gosslin</span>
+        <img src="img/james-gosslin.jpg"/>
+        <span>Java,<br>1995</span>
+      </div>
+
+      <div class="step">
+        <span>Yukihiro “Matz” Matsumoto</span>
+        <img src="img/yukihiro-matsumoto.jpg"/>
+        <span>Ruby,<br>1995</span>
+      </div>
+
+      <div class="step">
+        <span>Brendan Eich</span>
+        <img src="img/brendan-eich.jpg"/>
+        <span>JavaScript,<br>1995</span>
+      </div>
+
+      <div class="step">
+        <img src="img/facials.jpg"/>
+      </div>
+
+      <div class="step">
+        <span>Anders Hejlsberg</span>
+        <img src="img/anders-hejlsberg.jpg"/>
+        <span>C#,<br>2001</span>
+      </div>
+
+      <div class="step">
+        <span>Larry Wall</span>
+        <img src="img/larry-wall.jpg"/>
+        <span>Perl,<br>1987</span>
+      </div>
+
+      <div class="step">
+        <span>Pas d'espoir pour JavaScript ?</span>
+      </div>
+
+      <div class="step">
+        <span>Douglas Crockford</span>
+        <img src="img/douglas-crockford.jpg"/>
+        <span>JSlint,<br>2008</span>
+      </div>
+
+      <div class="step">
+        <span><code>"use strict";</code></span>
+        <ul>
+          <li>Plus de variable globale : <code>ReferenceError</code></li>
+          <li>Plus d'instruction <code>with</code></li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span>Ryan Dahl</span>
+        <img src="img/ryan-dalh.jpg">
+        <span>NodeJS,<br>2009</span>
+      </div>
+
+      <div class="step">
+        <span>JavaScript Crunch</span>
+        <pre class="javascript">
+<code>
+for ( callbackKey in needGroup ) {
+    // Safari 2 does not have hasOwnProperty, but not worth the bytes for a shim
+    // patch if needed. Kangax has a nice shim for it. Or just remove the check
+    // and promise not to extend the object prototype.
+    if ( needGroup.hasOwnProperty( callbackKey ) ) {
+      // Find the last added resource, and append to it's callback.
+      if ( ! moreToCome && ! ( --needGroupSize ) ) {
+        // If this is an object full of callbacks
+        if ( ! isFunction( callback ) ) {
+          // Add in the complete callback to go at the end
+          callback[ callbackKey ] = (function( innerCb ) {
+            return function () {
+              var args = [].slice.call( arguments );
+              innerCb && innerCb.apply( this, args );
+              complete();
+            };
+          })( cbRef[ callbackKey ] );
+        }
+        // If this is just a single callback
+        else {
+          callback = function () {
+            var args = [].slice.call( arguments );
+            cbRef.apply( this, args );
+            complete();
+          };
+        }
+      }
+      loadScriptOrStyle( needGroup[ callbackKey ], callback, chain, callbackKey, testResult );
+    }
+  }
+}</code></pre>
+        <span>* YepNope - <a href="http://yepnopejs.com/">http://yepnopejs.com/</a></span>
       </div>
 
       <div class="step">
@@ -120,15 +287,175 @@
       </div>
 
       <div class="step">
-        <span>Déclarations</span>
+        <span>Jeremy Ashkenas</span>
+        <img src="img/jeremy-ashkenas.jpg">
+        <span>CoffeeScript,<br>2009</span>
       </div>
 
       <div class="step">
+        <img src="img/signal.jpg">
+      </div>
 
-<textarea class="coffeescript">message = "#nwxtech rocks!"
+      <div class="step">
+        <!-- Zomming Jeremy Ashkenas -->
+      </div>
+
+      <div class="step">
+        <span>CoffeeScript n'est rien d'autre que JavaScript</span>
+      </div>
+
+      <div class="step">
+        <span>CoffeeScript considère que tout est une expression</span>
+      </div>
+
+      <div class="step">
+        <span>Indentation</span>
+        <pre class="coffeescript">
+<code>if hungry != true
+  stomac = "empty"
+else
+  stomac = "full"</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Plus classe encore</span>
+        <pre class="coffeescript">
+<code>stomac = if hungry then "empty" else "full"</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Variables</span>
+        <pre class="coffeescript">
+<code>message = "Ready for some Coffee?"
 alert message
-</textarea>
-<pre class="javascript"><code></code></pre>
+</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Fonctions</span>
+        <pre class="coffeescript">
+<code>getCoffee = (quantity, cream = true) ->
+  cream = if cream then "with some cream" else "without some cream"
+  confirm "Ready for #{quantity} coffee(s) #{cream}."
+</code></pre>
+        <span>Indentation de 2 espaces ou 1 tabulation</span>
+        <span>Exécute systématiquement un <code>return</code> sur la dernière valeur</span>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Appel de fonctions</span>
+        <pre class="coffeescript">
+<code>ready = getCoffee 2
+readyWithoutCream = getCoffee 2, false
+readyWithoutCream = getCoffee(2, false)</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Appel de fonctions sans argument</span>
+        <pre class="coffeescript">
+<code>takeCoffee = ->
+  "You can take your Coffee, have a nice day!"
+take = takeCoffee()
+takeASip = takeCoffee</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span><s>Weird JavaScript</s></span>
+        <ul>
+          <li>
+            <span><i>Toutes</i> les déclarations de variables sont locales</span>
+            <pre class="coffeescript">
+<code>message = "Wait a second for your Coffee, please"
+ready = ->
+  message = "Take your Sip of CoffeeScript!"
+
+alert message
+alert ready()</code></pre>
+            <pre class="javascript"><code></code></pre>
+          </li>
+          <li>
+            <span>Pas d'opérateur de comparaison à faible typage</span>
+            <pre class="coffeescript">
+<code>alert 2 == "2"</code></pre>
+            <pre class="javascript"><code></code></pre>
+          </li>
+          <li>
+            <span><code>"use strict";</code></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span>Vous en voulez plus ?</span>
+      </div>
+
+      <div class="step">
+        <span>Objets</span>
+        <pre class="coffeescript">
+<code>coffee =
+  quantity: 1
+  extras:
+    cream: false
+    milk: true
+  takeASip: (size) ->
+      "Go to prepare #{@.quantity} #{size} Coffee(s)!"
+
+coffee.quantity = 2
+alert cofee.takeASip long</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Arrays</span>
+        <pre class="coffeescript">
+<code>coffees = [ "affogato", "caffè latte", "cappuccino", "mocha" ]
+numbers = [0..9]</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Opérations sur les tableaux</span>
+        <pre class="coffeescript">
+<code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato", "mocha", "mazagran" ]
+aNames = coffees[0]
+cNames = coffees[1...3]
+mNames = coffees[3..]</code></pre>
+        <pre class="javascript"><code></code></pre>
+        <pre class="coffeescript">
+<code>coffees[1..2] = [ "irish coffee", "kopi susu" ]</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Destructuring Assignment</span>
+        <pre class="coffeescript">
+<code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato", "mocha", "mazagran" ]
+[ latte, cappucino ] = coffees[1..2]
+
+sumAndDifference = (a, b) -> [ a + b , a - b ]
+[ sum, difference ] = sumAndDifference 5, 2</code></pre>
+        <pre class="javascript"><code></code></pre>
+      </div>
+
+      <div class="step">
+        <span>Instructions</span>
+        <ul>
+          <li>if / unless</li>
+          <li>while / </li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span>À vous de jouer maintenant !</span>
+        <pre class="bash">
+<code>$ npm -g install coffee-script
+$ coffee -c main.coffee</code></pre>
       </div>
 
     </div>

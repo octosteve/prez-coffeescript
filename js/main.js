@@ -1,9 +1,12 @@
 Zepto(function($){
   $('.javascript').each(function(e) {
-    $(this).find('code').text(CoffeeScript.compile($(this).parents('.step').find('.coffeescript').text(), {bare: true}));
+    var code = $(this).prev().filter('.coffeescript').text();
+    if(!!code) {
+      $(this).find('code').text(CoffeeScript.compile(code, {bare: true}));
+    }
   });
 
-  $('pre code, textarea').each(function(i, e) {hljs.highlightBlock(e);});
+  hljs.initHighlightingOnLoad();
 
-  // impress().init();
+  impress().init();
 });

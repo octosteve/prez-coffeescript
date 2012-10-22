@@ -1,3 +1,98 @@
 @import url('reset.css');
+
+@import url('../fonts/Lobster-fontfacekit/stylesheet.css');
+@import url('../fonts/telex/stylesheet.css');
+@import url('../fonts/source-code-pro-fontfacekit/stylesheet.css');
+
 @import url('highlight.js/pojoaque.css');
 
+
+a {
+  color: #E9463C;
+  text-decoration: none;
+}
+
+body, html {
+  height: 100%;
+  min-height: 740px;
+}
+
+body {
+  background: rgb(205,235,142); /* Old browsers */
+  background: url("../img/light_wool.png"), -webkit-radial-gradient(center, ellipse cover, rgba(205,235,142,1) 0%,rgba(155,198,55,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: url("../img/light_wool.png"), radial-gradient(ellipse at center, rgba(205,235,142,1) 0%,rgba(155,198,55,1) 100%); /* W3C */
+
+  font-family: 'telex_regularregular';
+  font-size: 36px;
+  line-height: 1.5;
+  color: #555;
+}
+
+code {
+  font-family: 'SourceCodeProLight';
+}
+
+.step {
+  position: relative;
+  width: 900px;
+  padding: 40px;
+  margin: 20px auto;
+
+  opacity: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.active + .step.future {
+  opacity: 1;
+}
+
+.step.past {
+  opacity: 0.3;
+}
+
+#step-1 .info {
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 1.35em;
+  text-align: center;
+  padding-bottom: 0.4em;
+}
+
+#step-1 h1 {
+  border-top: 3px solid #E9463C;
+  padding: 90px 0;
+}
+
+#step-1 img {
+  width: 1000px;
+  margin-left: -50px;
+}
+
+#step-1 .subtitle {
+  border-bottom: 3px solid #E9463C;
+  font-size: 24px;
+  letter-spacing: 0.22em;
+  padding-bottom: 1em;
+}
+
+#step-1 .author {
+  position: absolute;
+  bottom: -30px;
+  right: 40px;
+  font-size: 20px;
+}
+
+#step-2 .more {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
