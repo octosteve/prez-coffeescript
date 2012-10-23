@@ -8,5 +8,9 @@ Zepto(function($){
 
   hljs.initHighlightingOnLoad();
 
+  $('.flipcard').on('click', function() {
+    $(this).toggleClass('flip');
+  });
+
   impress().init();
 });
