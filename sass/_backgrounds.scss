@@ -1,0 +1,8 @@
+$base_gradient : radial-gradient(center, #c9de96 0%,#8ab66b 44%,#398235 100%);
+$dark_gradient : linear-gradient(-45deg, #a90329 0%,#8f0222 44%,#6d0019 100%);
+$light_gradient: linear-gradient(-45deg, #ffa84c 0%,#ff7b0d 100%);
+$badge_gradient: linear-gradient(-45deg, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 100%);
+
+body {
+  @include background-image( image-url('light_wool.png'), $base_gradient);
+}

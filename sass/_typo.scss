@@ -1,0 +1,46 @@
+@include font-face("Lobster", font-files("lobster/lobster-webfont.ttf"));
+@include font-face("Source Code Pro", font-files("source_code_pro/SourceCodePro-Regular-webfont.ttf"));
+@include font-face("Telex", font-files("telex/telex-regular-webfont.ttf"));
+
+body {
+  font-family: "Lobster";
+  font-size: $base-fs;
+  line-height: 1.5em;
+  color: $base-color;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.45);
+}
+
+a {
+  color: $highlight-color;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: circle;
+  margin-left: 1em;
+  font-size: (32px / $base-fs) *1em;
+}
+
+code,
+strong {
+  color: $code-color;
+}
+
+pre {
+  code {
+    font-family: "Source Code Pro";
+    font-size: (18px / $base-fs) * 1em;
+    line-height: 1.38em;
+    text-shadow: none;
+  }
+}
+
+.big {
+  text-align: center;
+  font-size: (100px / $base-fs) *1em;
+  line-height: 1.2em;
+}
+
+.legend {
+  font-size: (24px / $base-fs) *1em;
+}

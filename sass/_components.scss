@@ -1,0 +1,144 @@
+.flipcard {
+  float: left;
+  position: relative;
+
+  width: 200px;
+  height: 200px;
+  margin: 80px 10px 0px;;
+
+  -webkit-perspective: 600px;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    @include box-sizing(border-box);
+    padding-top: 60px;
+
+    border: 1px solid #fff;
+    border-radius: 100px;
+    @include box-shadow(0 1px 5px $highlight-color);
+
+    color: #fff;
+    font-size: (22px / $base-fs) *1em;
+
+    text-align: center;
+    text-shadow: 0 1px 0 #398235;
+
+    @include transform-style(preserve-3d);
+    @include backface-visibility(hidden);
+    @include transition-property(all);
+    @include transition-duration(400ms);
+    @include transition-timing-function(ease-in-out);
+
+    cursor: pointer;
+  }
+
+  .front {
+    z-index: 900;
+    @include transform(rotateY(0deg));
+    @include background-image($dark_gradient);
+  }
+
+  .back {
+    z-index: 900;
+    @include transform(rotateY(-180deg));
+    @include background-image($light_gradient);
+  }
+
+  &.flip {
+    .front {
+      @include transform(rotateY(180deg));
+    }
+
+    .back {
+      @include transform(rotateY(0deg));
+    }
+  }
+}
+
+.inventors {
+  .name,
+  .language {
+    position: absolute;
+    top: 1600px;
+
+    opacity: 0.1;
+
+    @include transition-property(all);
+    @include transition-duration(1200ms);
+    @include transition-timing-function(ease-in-out);
+    @include transition-delay(200ms);
+  }
+
+  .name {
+    left: 420px;
+  }
+
+  .language {
+    left: 550px;
+  }
+
+  &.active {
+    .name {
+      top: 350px;
+      opacity: 1;
+    }
+
+    .language {
+      top: 420px;
+      opacity: 1;
+    }
+  }
+}
+
+.example {
+  pre {
+    margin-bottom: 20px;
+    position: relative;
+
+    code {
+      max-height: 400px;
+      overflow: auto;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      border-radius: 50px;
+
+      position: absolute;
+      top: 4px;
+      left: -65px;
+
+      width: 50px;
+      height: 50px;
+
+      border: 1px solid #fff;
+      box-shadow: 0 0 10px $highlight-color;
+    }
+
+    &.coffeescript:after {
+      @include background-image( image-url('coffeescript-logo.svg'), $badge_gradient);
+      background-size: auto 60px;
+      background-position: -10px -2px;
+    }
+
+    &.javascript:after {
+      content: 'JS';
+
+      @include background-image($light_gradient);
+
+      @include box-sizing(border-box);
+
+      font-size: 30px;
+      line-height: 1.85em;
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+  }
+}

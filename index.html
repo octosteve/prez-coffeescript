@@ -7,12 +7,9 @@
     <title>Take a sip of CoffeeScript, the JS++</title>
     <meta name="author" content="@madsgraphics" />
 
-    <link rel="stylesheet" href="styles/main.css">
+    <link href="/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
   <body class="impress-not-supported">
-    <div class="fallback-message">
-
-    </div>
 
     <div id="impress">
 
@@ -406,7 +403,7 @@ alert ready()</code></pre>
     cream: false
     milk: true
   takeASip: (size) ->
-      "Go to prepare #{@.quantity} #{size} Coffee(s)!"
+      "Go to prepare #{@quantity} #{size} Coffee(s)!"
 
 coffee.quantity = 2
 alert cofee.takeASip long</code></pre>
@@ -483,7 +480,7 @@ while money > 0
       <div class="step example" data-rotate-y="90" data-z="1000" data-x="500">
         <span>Comparaisons chainées</span>
         <pre class="coffeescript">
-<code>alert "We've get enought coffees" if 10 < coffees < 20</code></pre>
+<code>alert "We've got enought coffees" if 10 < coffees < 20</code></pre>
         <pre class="javascript"><code></code></pre>
         <span>Opérateur d'existence</span>
         <pre class="coffeescript">
@@ -518,6 +515,7 @@ alert affogato.prepare()</code></pre>
     e.stopPropagation()
     @customerID.purchase @cart</code></pre>
         <pre class="javascript"><code></code></pre>
+        <span class="legend"><a href="http://www.alistapart.com/articles/getoutbindingsituations/">http://www.alistapart.com/articles/getoutbindingsituations/</a></span>
       </div>
 
       <div class="step">

@@ -1,0 +1,12 @@
+pre {
+  code {
+    border: 3px solid $highlight-color;
+    box-shadow: 0px 0px 10px $highlight-color;
+  }
+}
+
+.legend {
+  position: absolute;
+  bottom: -100px;
+  right: 0;
+}

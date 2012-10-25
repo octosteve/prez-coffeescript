@@ -1,0 +1,293 @@
+@import "components";
+
+.step {
+  position: relative;
+
+  width: 900px;
+  @include box-sizing(border-box);
+  padding: 40px;
+  margin: 20px auto;
+
+  opacity: 0;
+
+  @include transition-property(opacity);
+  @include transition-duration(500ms);
+
+  &.active {
+    opacity: 1 !important;
+  }
+}
+
+.slide {
+  font-size: (48px / $base-fs) *1em;
+  line-height: 1.85em;
+
+  text-align: center;
+
+  padding: 90px 0;
+
+  border-top: 3px solid #398235;
+  border-bottom: 3px solid #398235;
+
+  // -webkit-transition: all 1s;
+}
+
+#step-1 {
+  .info {
+    font-family: 'Telex';
+    font-size: (28px / $base-fs) *1em;
+    letter-spacing: 1.35em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    padding-bottom: 0.4em;
+  }
+
+  h1 {
+    border-top: 3px solid $highlight-color;
+    padding: 90px 0;
+  }
+
+  img {
+    width: 1000px;
+    margin-left: -50px;
+  }
+
+  .subtitle {
+    font-size: (34px / $base-fs) *1em;
+    letter-spacing: 0;
+
+    text-align: center;
+
+    border-bottom: 3px solid #398235;
+
+    padding-bottom: 0.2em;
+  }
+
+  .author {
+    position: absolute;
+    bottom: -30px;
+    right: 40px;
+
+    font-size: (20px / $base-fs) *1em;
+  }
+}
+
+#step-2 {
+  .more {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+#step-9 {
+  img {
+    width: 1200px;
+    margin-left: -150px;
+  }
+}
+
+@for $î from 20 through 40 {
+  body.impress-on-step-#{$î} {
+    background-color: $dark-color;
+    background-image: none;
+    color: #fff;
+    text-shadow: none;
+  }
+}
+
+
+.impress-on-step-28,
+.impress-on-step-29 {
+  @for $î from 21 through 26 {
+    #step-#{$î} {
+      opacity: 1;
+    }
+  }
+
+  .inventors {
+    .name,
+    .language {
+      opacity: 0;
+    }
+  }
+
+  #step-21 {
+    left: 300px;
+    top: 150px;
+  }
+  #step-22 {
+    left: 300px;
+    top: -250px;
+  }
+  #step-23 {
+    left: 300px;
+    top: -650px;
+  }
+  #step-24 {
+    left: -300px;
+    top: 150px;
+  }
+  #step-25 {
+    left: -300px;
+    top: -250px;
+  }
+  #step-26 {
+    left: -300px;
+    top: -650px;
+  }
+}
+
+.impress-on-step-29 {
+  @for $î from 21 through 26 {
+    #step-#{$î}:after {
+      content : '☞';
+      position: absolute;
+      display: block;
+      color: $arrow-color;
+      font-size: (96px / $base-fs) *1em;
+    }
+  }
+
+  #step-21:after {
+    top: 236px;
+    left: 73px;
+    @include transform(rotate(16deg));
+  }
+
+  #step-22:after {
+    top: 325px;
+    left: 73px;
+    @include transform(rotate(-20deg));
+  }
+
+  #step-23:after {
+    top: 393px;
+    left: 101px;
+    @include transform(rotate(-49deg));
+  }
+
+  #step-24:after {
+    top: 332px;
+    left: 121px;
+    @include transform(rotate(-71deg));
+  }
+
+  #step-25:after {
+    top: 322px;
+    left: -3px;
+    @include transform(rotate(23deg));
+  }
+
+  #step-26:after {
+    top: 451px;
+    left: 172px;
+    @include transform(rotate(-62deg));
+  }
+}
+
+.impress-on-step-30 {
+  #step-27 {
+    opacity: 1;
+
+    .name {
+      opacity: 1;
+      top: 350px;
+    }
+
+    &:after {
+      content : '??? ☞';
+      display: block;
+      @include transform(rotate(-20deg));
+
+      position: absolute;
+      left: -58px;
+      top: 398px;
+
+      font-size: (96px / $base-fs) *1em;
+      color: $arrow-color;
+    }
+  }
+}
+
+#step-31:after {
+  content : '⚠☞';
+  display: block;
+  @include transform(rotate(-51deg));
+
+  position: absolute;
+  left: 38px;
+  top: 342px;
+
+  font-size: (96px / $base-fs) *1em;
+  color: $arrow-color;
+}
+
+#step-32:after {
+  content : 'OMG! ☞';
+  display: block;
+  @include transform(rotate(-15deg));
+
+  position: absolute;
+  left: -102px;
+  top: 321px;
+
+  font-size: (72px / $base-fs) *1em;
+  color: $arrow-color;
+}
+
+#step-35 {
+  code {
+    color: $highlight-color;
+  }
+}
+
+#step-37 {
+  code {
+    font-size: 14px;
+  }
+}
+
+.impress-on-step-39 {
+  #step-38 {
+    opacity: 1;
+
+    &:after {
+      content : '☜ Wut?';
+      display: block;
+      @include transform(rotate(-8deg));
+
+      position: absolute;
+      left: 295px;
+      top: 248px;
+
+      font-size: (72px / $base-fs) *1em;
+      color: $arrow-color;
+    }
+  }
+}
+
+.impress-on-step-40 {
+  #step-38 {
+    opacity: 1;
+
+    &:after {
+      content : 'ッ !';
+      display: block;
+      @include transform(rotate(-8deg));
+
+      position: absolute;
+      left: 295px;
+      top: 248px;
+
+      font-size: (72px / $base-fs) *1em;
+      color: $arrow-color;
+    }
+  }
+}
+
+#step-41 {
+  font-size: (60px / $base-fs) *1em;
+}
