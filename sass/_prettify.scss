@@ -54,13 +54,41 @@
 pre.prettyprint {
   background-color: #fdf6e3;
   padding: 10px;
-  border: 1px solid #E1E1E8; }
+  border: 1px solid #E1E1E8;
+}
+
+pre.linenums {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+
+    width: 1px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 2.7em;
+
+    background-color: lighten($base-color, 55);
+  }
+}
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
   color: #4c666c;
-  margin: 0 0 0 40px; }
 
-ol.linenums li {
-  line-height: 18px;
-  padding-left: 12px; }
+  li {
+    line-height: 18px;
+    padding-left: 12px;
+
+    list-style-type: decimal;
+
+    color: lighten($base-color, 55);
+
+    code {
+      padding-left: 1em;
+    }
+  }
+}

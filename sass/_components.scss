@@ -96,14 +96,9 @@
 }
 
 .example {
-  pre {
+  pre.prettyprint {
     margin-bottom: 20px;
     position: relative;
-
-    code {
-      max-height: 400px;
-      overflow: auto;
-    }
 
     &:after {
       content: '';
@@ -121,13 +116,13 @@
       box-shadow: 0 0 10px $highlight-color;
     }
 
-    &.coffeescript:after {
-      @include background-image( image-url('coffeescript-logo.svg'), $badge_gradient);
+    &.lang-coffeescript:after {
+      @include background-image(image-url('coffeescript-logo.svg'), $badge_gradient);
       background-size: auto 60px;
       background-position: -10px -2px;
     }
 
-    &.javascript:after {
+    &.lang-javascript:after {
       content: 'JS';
 
       @include background-image($light_gradient);

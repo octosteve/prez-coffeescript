@@ -34,6 +34,18 @@ pre {
   code {
     text-shadow: none;
   }
+
+  ol.linenums {
+    li {
+      margin-left: 0;
+      padding-left: 0;
+
+      font-size: 1em;
+      line-height: 1.35em;
+
+      list-style-position: inside;
+    }
+  }
 }
 
 .big {
