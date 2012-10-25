@@ -3,8 +3,13 @@ pre {
   border-radius: 5px;
   box-shadow: 0px 0px 10px $highlight-color;
 
-  max-height: 400px;
-  overflow: auto;
+  .example & {
+    max-height: 400px;
+
+    ol {
+      max-height: 400px;
+    }
+  }
 }
 
 .legend {

@@ -100,13 +100,32 @@
     margin-bottom: 20px;
     position: relative;
 
+    ol {
+      overflow: auto;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+
+        width: 1px;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 2.2em;
+
+        background-color: lighten($base-color, 55);
+      }
+    }
+
     &:after {
       content: '';
       display: block;
       border-radius: 50px;
 
       position: absolute;
-      top: 4px;
+      top: 0;
       left: -65px;
 
       width: 50px;
@@ -130,6 +149,7 @@
       @include box-sizing(border-box);
 
       font-size: 30px;
+      font-family: 'Lobster';
       line-height: 1.85em;
       color: #fff;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.35);

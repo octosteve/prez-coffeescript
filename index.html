@@ -51,7 +51,7 @@
 
       <div class="step slide" data-z="2500">
         <span>Si vous êtes comme moi…</span><br>
-        <span>(et je sais qu'il y en a, nous sommes nombreux)</span>
+        <span>(we are legions!)</span>
       </div>
 
       <div class="step" data-y="-2000" data-z="2500">
@@ -117,8 +117,7 @@
 function decrease() {
   result -= 1;
   return result;
-}
-</code></pre>
+}</code></pre>
       </div>
 
       <div class="step" data-rotate-y="180" data-rotate-x="180" data-y="2000" data-z="1050" data-x="-900">
@@ -126,25 +125,20 @@ function decrease() {
         <pre class="prettyprint linenums lang-javascript">
 <code>var foo = 5;
 with (obj)
-  print foo; // 5 sauf si obj.foo existe
-</code>
-        </pre>
+  print foo; // 5 sauf si obj.foo existe</code></pre>
       </div>
 
       <div class="step" data-rotate-y="270" data-rotate-x="180" data-y="2000" data-z="600" data-x="-2250">
         <span>Negative Zero !</span>
         <pre class="prettyprint linenums lang-javascript">
 <code>0 === -0; // true
-1/0 === 1/-0; // false
-</code>
-        </pre>
+1/0 === 1/-0; // false</code></pre>
       </div>
 
       <div class="step"  data-rotate-y="360" data-rotate-x="180" data-y="2000" data-z="150" data-x="-1800">
         <span>NaN</span>
         <pre class="prettyprint linenums lang-javascript">
-<code> typeof NaN; // "number"
-</code></pre>
+<code> typeof NaN; // "number"</code></pre>
       </div>
 
       <div class="step" data-rotate-x="180" data-rotate="90" data-y="2000" data-z="150" data-x="-1800">
@@ -244,8 +238,7 @@ with (obj)
       <div class="step">
         <span>JavaScript Crunch</span>
         <pre class="prettyprint linenums lang-javascript">
-<code>
-for ( callbackKey in needGroup ) {
+<code>for ( callbackKey in needGroup ) {
     // Safari 2 does not have hasOwnProperty, but not worth the bytes for a shim
     // patch if needed. Kangax has a nice shim for it. Or just remove the check
     // and promise not to extend the object prototype.
@@ -530,7 +523,7 @@ alert affogato.prepare()</code></pre>
 
       <div class="step big" data-rotate-y="360" data-rotate-x="180">
         <span>À vous de jouer <strong>maintenant</strong> !</span>
-        <pre class="bash">
+        <pre class="prettyprint lang-bash">
 <code>$ npm -g install coffee-script
 $ coffee -c main.coffee</code></pre>
       </div>

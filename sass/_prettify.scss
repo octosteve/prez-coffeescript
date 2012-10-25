@@ -57,24 +57,6 @@ pre.prettyprint {
   border: 1px solid #E1E1E8;
 }
 
-pre.linenums {
-  position: relative;
-
-  &:before {
-    content: '';
-    display: block;
-
-    width: 1px;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 2.7em;
-
-    background-color: lighten($base-color, 55);
-  }
-}
-
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
   color: #4c666c;
