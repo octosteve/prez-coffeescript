@@ -108,7 +108,7 @@
 
       <div class="step" data-rotate-y="90" data-rotate-x="180" data-y="2000" data-z="150">
         <span>Scope global</span>
-        <pre class="javascript">
+        <pre class="prettyprint lang-javascript">
 <code>function increase(n) {
   result = n + 1;
   return result;
@@ -123,7 +123,7 @@ function decrease() {
 
       <div class="step" data-rotate-y="180" data-rotate-x="180" data-y="2000" data-z="1050" data-x="-900">
         <span><code>with</code> block</span>
-        <pre class="javascript">
+        <pre class="prettyprint lang-javascript">
 <code>var foo = 5;
 with (obj)
   print foo; // 5 sauf si obj.foo existe
@@ -133,7 +133,7 @@ with (obj)
 
       <div class="step" data-rotate-y="270" data-rotate-x="180" data-y="2000" data-z="600" data-x="-2250">
         <span>Negative Zero !</span>
-        <pre class="javascript">
+        <pre class="prettyprint lang-javascript">
 <code>0 === -0; // true
 1/0 === 1/-0; // false
 </code>
@@ -142,7 +142,7 @@ with (obj)
 
       <div class="step"  data-rotate-y="360" data-rotate-x="180" data-y="2000" data-z="150" data-x="-1800">
         <span>NaN</span>
-        <pre class="javascript">
+        <pre class="prettyprint lang-javascript">
 <code> typeof NaN; // "number"
 </code></pre>
       </div>
@@ -243,7 +243,7 @@ with (obj)
 
       <div class="step">
         <span>JavaScript Crunch</span>
-        <pre class="javascript">
+        <pre class="prettyprint lang-javascript">
 <code>
 for ( callbackKey in needGroup ) {
     // Safari 2 does not have hasOwnProperty, but not worth the bytes for a shim
@@ -307,38 +307,38 @@ for ( callbackKey in needGroup ) {
 
       <div class="step example" data-rotate="90" data-x="-1000" data-y="550">
         <span>Indentation</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>if hungry != true
   stomac = "empty"
 else
   stomac = "full"</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate="90" data-x="-1600" data-y="550">
         <span>Plus classe encore</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>stomac = if hungry then "empty" else "full"</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate="90" data-x="-3200" data-y="550">
         <span>Variables</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>message = "Ready for some Coffee?"
 alert message
 </code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate="90" data-x="-4800" data-y="550">
         <span>Fonctions</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>getCoffee = (quantity, cream = true) ->
   cream = if cream then "with some cream" else "without some cream"
   confirm "Ready for #{quantity} coffee(s) #{cream}."
 </code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
         <ul>
           <li>Indentation de 2 espaces ou 1 tabulation</li>
           <li><code>return</code> la dernière valeur</li>
@@ -347,21 +347,21 @@ alert message
 
       <div class="step example" data-rotate="90" data-x="-6400" data-y="550">
         <span>Appel de fonctions</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>ready = getCoffee 2
 readyWithoutCream = getCoffee 2, false
 readyWithoutCream = getCoffee(2, false)</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate="90" data-x="-8000" data-y="550">
         <span>Appel de fonctions sans argument</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>takeCoffee = ->
   "You can take your Coffee, have a nice day!"
 take = takeCoffee()
 takeASip = takeCoffee</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate="90" data-x="-10000" data-y="550">
@@ -369,20 +369,20 @@ takeASip = takeCoffee</code></pre>
         <ul>
           <li>
             <span><i>Toutes</i> les déclarations de variables sont locales</span>
-            <pre class="coffeescript">
+            <pre class="prettyprint lang-coffeescript">
 <code>message = "Wait a second for your Coffee, please"
 ready = ->
   message = "Take your Sip of CoffeeScript!"
 
 alert message
 alert ready()</code></pre>
-            <pre class="javascript"><code></code></pre>
+            <pre class="prettyprint lang-javascript"><code></code></pre>
           </li>
           <li>
             <span>Pas d'opérateur de comparaison à faible typage</span>
-            <pre class="coffeescript">
+            <pre class="prettyprint lang-coffeescript">
 <code>alert 2 == "2"</code></pre>
-            <pre class="javascript"><code></code></pre>
+            <pre class="prettyprint lang-javascript"><code></code></pre>
           </li>
           <li>
             <span><code>"use strict";</code></span>
@@ -396,7 +396,7 @@ alert ready()</code></pre>
 
       <div class="step example" data-rotate-y="90" data-z="-100" data-x="500">
         <span>Objets</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>coffee =
   quantity: 1
   extras:
@@ -407,70 +407,70 @@ alert ready()</code></pre>
 
 coffee.quantity = 2
 alert cofee.takeASip long</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate-y="90" data-z="-2000" data-x="500">
         <span>Arrays</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>coffees = [ "affogato", "caffè latte", "cappuccino", "mocha" ]
 numbers = [0..9]</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example"  data-rotate-y="90" data-z="-3000" data-x="500">
         <span>Opérations sur les tableaux</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato", "mocha", "mazagran" ]
 aNames = coffees[0]
 cNames = coffees[1...3]
 mNames = coffees[3..]</code></pre>
-        <pre class="javascript"><code></code></pre>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-javascript"><code></code></pre>
+        <pre class="prettyprint lang-coffeescript">
 <code>coffees[1..2] = [ "irish coffee", "kopi susu" ]</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate-y="90" data-z="-4000" data-x="500">
         <span>Destructuring Assignment</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato", "mocha", "mazagran" ]
 [ latte, cappucino ] = coffees[1..2]
 
 sumAndDifference = (a, b) -> [ a + b , a - b ]
 [ sum, difference ] = sumAndDifference 5, 2</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate-y="90" data-z="-5000" data-x="500">
         <span>Boucle <code>for</code></span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato" ]
 getCoffee i + 1, coffee for coffee, i in coffees</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
         <span>Et conditionnelles</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato" ]
 drink coffee for coffee in coffees when coffee isnt "cappuccino" or "affogato"</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate-y="90" data-z="-6000" data-x="500">
         <span>Boucle <code>while</code></span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>money = 15
 while money > 0
   payCoffee money</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
 
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>until money < 1
   payCoffee money</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
 
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>payCoffee money while money > 0</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step big">
@@ -479,18 +479,18 @@ while money > 0
 
       <div class="step example" data-rotate-y="90" data-z="1000" data-x="500">
         <span>Comparaisons chainées</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>alert "We've got enought coffees" if 10 < coffees < 20</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
         <span>Opérateur d'existence</span>
-        <pre class="coffeescript">
+        <pre class="prettyprint lang-coffeescript">
 <code>if coffee.hot? then alert "Wait a minute before drink…"</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate-y="90" data-z="2000" data-x="500">
         <span>Des classes !</span>
-<pre class="coffeescript">
+<pre class="prettyprint lang-coffeescript">
 <code>class Coffee
   constructor: (name, cream = null) ->
 
@@ -500,12 +500,12 @@ while money > 0
 
 affogato = new Coffee "affogato", true
 alert affogato.prepare()</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
       </div>
 
       <div class="step example" data-rotate-y="90" data-z="3000" data-x="500">
         <span>Binding facile</span>
-<pre class="coffeescript">
+<pre class="prettyprint lang-coffeescript">
 <code>ActivateCart = ( customer, cart ) ->
   @customer = id
   @cart     = cart
@@ -514,7 +514,7 @@ alert affogato.prepare()</code></pre>
     e.preventDefault()
     e.stopPropagation()
     @customerID.purchase @cart</code></pre>
-        <pre class="javascript"><code></code></pre>
+        <pre class="prettyprint lang-javascript"><code></code></pre>
         <span class="legend"><a href="http://www.alistapart.com/articles/getoutbindingsituations/">http://www.alistapart.com/articles/getoutbindingsituations/</a></span>
       </div>
 
@@ -547,10 +547,10 @@ $ coffee -c main.coffee</code></pre>
 
     </div>
 
-    <script type="text/javascript" src="js/zepto.min.js"></script>
-    <script type="text/javascript" src="js/highlight.pack.js"></script>
-    <script type="text/javascript" src="js/coffee-script.js"></script>
-    <script type="text/javascript" src="js/impress.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="/js/zepto.min.js"></script>
+    <script type="text/javascript" src="/js/coffee-script.js"></script>
+    <script type="text/javascript" src="/js/prettify.js"></script>
+    <script type="text/javascript" src="/js/impress.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>

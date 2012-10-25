@@ -27,10 +27,11 @@ strong {
 }
 
 pre {
+  font-family: "Source Code Pro" !important;
+  font-size: (18px / $base-fs) * 1em !important;
+  line-height: 1.38em;
+
   code {
-    font-family: "Source Code Pro";
-    font-size: (18px / $base-fs) * 1em;
-    line-height: 1.38em;
     text-shadow: none;
   }
 }

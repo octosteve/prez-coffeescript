@@ -1,12 +1,13 @@
 Zepto(function($){
-  $('.javascript').each(function(e) {
-    var code = $(this).prev().filter('.coffeescript').text();
+  $('.lang-javascript').each(function(e) {
+    var code = $(this).prev().filter('.lang-coffeescript').text();
     if(!!code) {
       $(this).find('code').text(CoffeeScript.compile(code, {bare: true}));
     }
   });
 
-  hljs.initHighlightingOnLoad();
+  // hljs.initHighlightingOnLoad();
+  prettyPrint();
 
   $('.flipcard').on('click', function() {
     $(this).toggleClass('flip');
