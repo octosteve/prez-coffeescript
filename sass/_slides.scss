@@ -28,8 +28,13 @@
 
   border-top: 3px solid #398235;
   border-bottom: 3px solid #398235;
+}
 
-  // -webkit-transition: all 1s;
+.big {
+  li {
+    list-style-type: none;
+    margin-left: 0;
+  }
 }
 
 #step-1 {

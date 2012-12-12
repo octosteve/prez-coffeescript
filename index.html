@@ -238,38 +238,17 @@ with (obj)
       <div class="step">
         <span>JavaScript Crunch</span>
         <pre class="prettyprint linenums lang-javascript">
-<code>for ( callbackKey in needGroup ) {
-    // Safari 2 does not have hasOwnProperty, but not worth the bytes for a shim
-    // patch if needed. Kangax has a nice shim for it. Or just remove the check
-    // and promise not to extend the object prototype.
-    if ( needGroup.hasOwnProperty( callbackKey ) ) {
-      // Find the last added resource, and append to it's callback.
-      if ( ! moreToCome && ! ( --needGroupSize ) ) {
-        // If this is an object full of callbacks
-        if ( ! isFunction( callback ) ) {
-          // Add in the complete callback to go at the end
-          callback[ callbackKey ] = (function( innerCb ) {
-            return function () {
-              var args = [].slice.call( arguments );
-              innerCb && innerCb.apply( this, args );
-              complete();
-            };
-          })( cbRef[ callbackKey ] );
-        }
-        // If this is just a single callback
-        else {
-          callback = function () {
-            var args = [].slice.call( arguments );
-            cbRef.apply( this, args );
-            complete();
-          };
-        }
-      }
-      loadScriptOrStyle( needGroup[ callbackKey ], callback, chain, callbackKey, testResult );
-    }
+<code>
+Sharing = {
+  init: function (sf_info) {
+    [sf_info.current, sf_info.past].each(function (list) {
+      list.each(function (info) {
+        Sharing._decode_sort_key(info);
+      });
+    });
   }
 }</code></pre>
-        <span class="legend">* YepNope - <a href="http://yepnopejs.com/">http://yepnopejs.com/</a></span>
+        <span class="legend">* © Dropbox - <a href="https://tech.dropbox.com/2012/09/dropbox-dives-into-coffeescript/">https://tech.dropbox.com/2012/09/dropbox-dives-into-coffeescript/</a></span>
       </div>
 
       <div class="step inventors" data-rotate-x="-90" data-y="300" data-z="-500">
@@ -444,7 +423,7 @@ getCoffee i + 1, coffee for coffee, i in coffees</code></pre>
         <span>Et conditionnelles</span>
         <pre class="prettyprint linenums lang-coffeescript">
 <code>coffees = [ "affogato", "caffè latte", "cappuccino", "macchiato" ]
-drink coffee for coffee in coffees when coffee isnt "cappuccino" or "affogato"</code></pre>
+drink coffee for coffee in coffees when coffee isnt ( "cappuccino" or "affogato")</code></pre>
         <pre class="prettyprint linenums lang-javascript"><code></code></pre>
       </div>
 
@@ -477,7 +456,8 @@ while money > 0
         <pre class="prettyprint linenums lang-javascript"><code></code></pre>
         <span>Opérateur d'existence</span>
         <pre class="prettyprint linenums lang-coffeescript">
-<code>if coffee.hot? then alert "Wait a minute before drink…"</code></pre>
+<code>if coffee.ready? then alert "Your coffe is ready…"
+if coffee.ready?.hot? then alert "Wait a minute before drink…"</code></pre>
         <pre class="prettyprint linenums lang-javascript"><code></code></pre>
       </div>
 
@@ -491,7 +471,11 @@ while money > 0
     extra = "with cream" if @cream?
     "Go to prepare a #{name} #{extra}"
 
-affogato = new Coffee "affogato", true
+class CoffeeCream extends Coffee
+  constructor: (name) ->
+    super name, true
+
+affogato = new CoffeeCream "affogato"
 alert affogato.prepare()</code></pre>
         <pre class="prettyprint linenums lang-javascript"><code></code></pre>
       </div>
@@ -517,8 +501,48 @@ alert affogato.prepare()</code></pre>
           <li>Syntaxe Heredoc</li>
           <li>Bloc d'expressions régulières</li>
           <li>Blocs <code>Try</code>/<code>Catch</code></li>
-          <li>Splats…</li>
+          <li>Splats</li>
+          <li>Duck Typing</li>
+          <li>…</li>
         </ul>
+      </div>
+
+      <div class="step" data-rotate="90" data-y="800" data-x="800">
+        <dl>
+          <dt>Pros</dt>
+          <dd>
+            <ul>
+              <li>Encourage l'utilisation de Design Patterns</li>
+              <li>Favorise les Bonnes Pratiques, et prévient les erreurs</li>
+              <li>Résoud les problèmes liés au JS pur</li>
+              <li>Produit un code de qualité, propre, <strong>lisible</strong></li>
+              <li>Permet la génération de documentation automatique avec <a href="https://jashkenas.github.com/docco/">Docco</a>
+            </ul>
+          </dd>
+          <dt>Cons</dt>
+          <dd>
+            <ul>
+              <li>Nécessite une compilation : <code>coffee -w</code></li>
+              <li>Débuggage : utilisez <code>debugger</code> &amp; sourcemap</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="step" data-rotate="180" data-y="800" data-x="-800">
+        <span>Tips & Tricks</span>
+        <ul>
+          <li>Utilisez les splats</li>
+          <li>Pensez aux booléens <code>yes / no</code>, <code>on / off</code></li>
+          <li>Utilisez l'opérateur d'existence sur une méthode <code>MyClass.myFunction?(arg)</code></li>
+          <li>Utilisez <code>in</code> pour tester la présence d'une valeur</li>
+          <li>Utilisez les valeurs par défaut dans les méthodes</li>
+          <li>Abusez des <em>string interpolation</em></li>
+        </ul>
+      </div>
+
+      <div class="step big" data-rotate="270" data-y="-800" data-x="-800">
+        <span>Relisez<br>“Javascript, The Good Parts”</span>
       </div>
 
       <div class="step big" data-rotate-y="360" data-rotate-x="180">
@@ -530,6 +554,14 @@ $ coffee -c main.coffee</code></pre>
 
       <div class="step big slide" data-rotate-y="180" data-rotate-x="180">
         <span>Questions ?</span>
+      </div>
+
+      <div class="step big">
+        <span>Ressources</span>
+        <ul>
+          <li><a href="http://coffeescript.org">coffeescript.org</a></li>
+          <li><a href="http://coffeescriptcookbook.com">coffeescriptcookbook.com</a></li>
+        </ul>
       </div>
 
       <div class="step" data-rotate-y="180" data-rotate-x="90" data-y="-400" data-z="900">
